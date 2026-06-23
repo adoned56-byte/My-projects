@@ -1,0 +1,27 @@
+coins = 0
+click_power = 1 
+
+def click():
+    global coins, click_power
+    coins += click_power
+    print(f"Монеты: {coins} | Сила клика: {click_power}")
+
+def upgrade():
+    global coins, click_power
+    if coins >= 10:
+        coins -= 10
+        click_power += 1
+        print("Апгрейд успешен!")
+    else:
+        print(f"Не хватает монет! Нужен 10, у вас {coins}")
+
+while True:
+    cmd = input("1: Клик | 2: Апгрейд | 3: Выход -> ")
+  
+    if cmd == "1":
+        click()
+    elif cmd == "2":
+        upgrade()
+    elif cmd == "3":
+        print("Игра завершена.")
+        break  
