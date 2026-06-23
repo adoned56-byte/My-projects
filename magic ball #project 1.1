@@ -1,0 +1,23 @@
+#Python magic ball 
+#I made it in Arch linux on Terminal 
+
+import random
+import time
+
+print("Привет я генератор случайных предсказаний")
+
+while True:
+    question = input("Введи свое имя:")
+
+    answers = ["Ты будешь замечательным человеком !","Ты будешь богатым!","Ты найдешь свою любовь в скором времени","Ты начнешь жизнь>
+    magic_answers=random.choice(answers)
+
+    if question == "exit":
+        print("пока пока")
+        break
+
+    print("Гадаю...")
+    time.sleep(1)
+    print(magic_answers)
+    print("Задавай еще!")
+
