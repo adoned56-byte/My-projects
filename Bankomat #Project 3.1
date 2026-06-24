@@ -1,0 +1,58 @@
+import time
+
+money = 1000
+
+def money_sys():
+    while True:
+        print("\n1:Счет | 2:Пополнение | 3:Снятие | 4:Выход")
+        asd = input("Цифра Назначения: ")
+
+        if asd == "1":
+            Schet()
+        elif asd == "2":
+            popol()
+        elif asd == "3":
+            snyatie()
+        elif asd == "4":
+            vixod()
+            break 
+        else:
+            print("Неверный ввод. Попробуйте еще раз.")
+
+def Schet():
+    time.sleep(1)
+    print("Считаем ваши деньги...")
+    time.sleep(2)
+    print("Почти готово...")
+    time.sleep(2)
+    print(f"Ваш счет>: {money}")  
+    time.sleep(2)
+
+def popol():
+    global money
+    amount1 = int(input("Сумма пополнения >: "))
+    money += amount1
+    time.sleep(2)
+    print("Идет пoполнение...")
+    time.sleep(4)
+    print(f"Ваш счет пополнился на {amount1}! Текущий баланс: {money}")
+    time.sleep(2)
+
+def snyatie():
+    global money
+    amount2 = int(input("Сумма снятия>: "))
+    if amount2 > money:
+        print("Ошибка: Недостаточно средств на счете!")
+    else:
+        money -= amount2
+        time.sleep(2)
+        print("Идет снятие...")
+        time.sleep(4)
+        print(f"Вы сняли {amount2}. Текущий баланс: {money}")
+        time.sleep(2)
+
+def vixod():
+    print("Пока пока")
+    time.sleep(1)
+
+money_sys()
